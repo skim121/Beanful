@@ -1,10 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;600&display=swap');
+    </style>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    
     <link rel = "stylesheet" href = "css/style.css">
     <script defer src = "js/app.js"></script>
     <title>Cool Beans</title>
@@ -13,13 +17,18 @@
 <body>
 
 <section class="start">
-    <h1>BEANFUL</h1>
-    <h3>Pick your bean!</h3>    
-    <img src = "images/testbean.png" alt=""> 
+    <h1 class="title">BEANFUL</h1>
+    <h3 class="pick">Pick your bean!</h3>    
+    <img id="testbean" src = "images/testbean.png" alt=""> 
     <br>
-    <input type="text" id="nameinput" placeholder = "Name your bean" />
-    <input type="submit" value ="Play"/>
-    <!-- <input type=button id="playbutton" onClick="window.location.href='play.html'" value="Play" /> -->
+    <form> 
+        <input type="text" id="nameinput" placeholder = "Name your bean" />
+        <!-- <input type="submit" id="submitinput" value ="Play"/> -->
+        <input type=button id="playbutton" value="Play" />
+    </form>
+    
+
+
 </section>
 
 <section class = "play">
@@ -32,9 +41,12 @@
 
 
     <div class="container">
-    <h3 class="water">Keep your bean hydrated</h3>
+    
     <button class="waterbutton">Water</button>
-    <div id="waterbar"></div>
+    <h3 class="water">Keep your bean hydrated</h3>
+    <div class="waterbar">
+        <div class="waterprogress" data-done="70">70%</div>
+    </div>
 
     <h3 class="bug">Keep bugs away from your bean</h3>
     <button class="bugbutton">Bug Spray</button>

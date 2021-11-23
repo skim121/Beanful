@@ -1,16 +1,91 @@
 /* CSS HEX */
-/* --english-violet: #413c58ff;
---opal: #a3c4bcff;
---tea-green: #bfd7b5ff;
---pale-spring-bud: #e7efc5ff;
---banana-mania: #f2dda4ff; */
+:root {
+    --main: #d7e0da; 
+    --dark: #717f6f;
+    --white: #f7fafa;
+    --copper: #E1B180;
+    --bean: #ffcc7c;
+    --extradark: #4d634b;
+}
+
+body{
+    font-family: 'Outfit', sans-serif;
+}
 
 .start{
     text-align: center;
-
+    background-color: var(--main);
+    background-size: cover;
+    height: 100%;
+    padding: 6%;
 }
 
+h1{
+    font-size: 72px;
+    color: var(--extradark);
+}
+ 
+h3{
+    font-size: 28px; 
+    color: var(--white);
+}
+
+input{
+    position: relative;
+    display: inline-block;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+input [type="text"]{
+    padding: 0 25px;
+}
+
+#nameinput{
+    padding: 12px;
+    width: 250px;
+    margin: 20px; 
+    border: none;
+    border-radius: 20px 0 0 20px;
+    outline: none;
+    font-size: 16px;
+    color: #757575;
+}
+
+#playbutton{ 
+    position: relative;
+    padding: 12px;
+    width: 90px;
+    left: -25px;
+    color: var(--copper);
+    /* color: #4e4b4b; */
+    border: none;
+    border-radius: 0 20px 20px 0;
+    cursor: pointer;
+}
+
+.play{
+    display: flex;
+    align-items: center;
+    justify-content: left;
+}
 .waterbar{
-    border: 2px;
-    
+    /* border: 1px solid grey; */
+    background: rgb(238, 236, 236);
+    width: 100%;
+    height: 35px;
+    border-radius: 20px;
+}
+
+.waterprogress{
+    height: 100%;
+    width: 0%;
+    background: linear-gradient(to right, var(--white), var(--dark));
+    /* box-shadow: 0 3px 3px -5px var(--tea-green), 0 2px 2px 5px var(--opal); */
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity:0; 
+    transition: 1s ease 0.3s; 
 }

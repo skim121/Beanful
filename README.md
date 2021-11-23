@@ -1,5 +1,5 @@
-# GA Project One: Cool Beans
-SEI Unit One Project: Create a game similar to "Tamagotchi" using HTML, CSS, JS, and Jquery
+# Cool Beans
+GA SEI Unit One Project: Create a game similar to "Tamagotchi" using HTML, CSS, JS, and Jquery
 
 #### Objective 
 User picks a bean of their choice to grow and keep alive until harvest season. They can water the bean, put bug spray to keep insects away, or sweet talk them to keep them happy. If one of these metrics hit zero, the bean will be trashed. If the metrics remain satisfied until harvest season, the bean will be harvested.  

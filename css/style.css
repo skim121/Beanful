@@ -76,7 +76,20 @@ input [type="text"]{
 }
 
 .waterbar{
-    /* border: 1px solid grey; */
+    background: rgb(238, 236, 236);
+    width: 100%;
+    height: 35px;
+    border-radius: 20px;
+}
+
+.bugbar{
+    background: rgb(238, 236, 236);
+    width: 100%;
+    height: 35px;
+    border-radius: 20px;
+}
+
+.lovebar{
     background: rgb(238, 236, 236);
     width: 100%;
     height: 35px;
@@ -97,15 +110,14 @@ input [type="text"]{
 } */
 
 .container{
-    display:block;
     background-color: white;
     padding-right: 15%;
+    padding-left: 15%;
 }
 
 .container h3{
     font-size:14px;
 }
-
 
 
 .bug{
@@ -122,13 +134,13 @@ input [type="text"]{
     grid-template-rows: repeat(5, 1fr);
     grid-column-gap: 0px;
     grid-row-gap: 0px;
-    }
+    } 
     
 .beanname { 
     padding-left: 100px;
     grid-area: 1 / 1 / 2 / 7; }
 .character { grid-area: 2 / 1 / 5 / 3; }
-.container { grid-area: 2 / 3 / 5 / 7; }
+.container { grid-area: 2 / 3 / 5 / 8; }
 .harvest { grid-area: 5 / 1 / 6 / 7; }
 
 .character {
@@ -137,13 +149,14 @@ input [type="text"]{
 
 .water{
     background-color: blue;
-    display: inner-grid;
-    grid-template-columns: repeat(8, 1fr);
-    grid-template-rows: repeat(2, 1fr);
-    grid-column-gap: 0px;
-    grid-row-gap: 0px;
+    display: flex;
 }
 
-.waterbutton { grid-area: 1 / 1 / 3 / 3; }
-.watertext { grid-area: 1 / 3 / 2 / 10; }
-.waterbar { grid-area: 2 / 3 / 3 / 9; }
+.waterbar {
+    width: 100%;
+    }
+    
+.watersub {
+    background-color: red;
+    width: 100%;
+}

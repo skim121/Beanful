@@ -30,3 +30,8 @@ $("#playbutton").click(function(){
     $(".beanname").html(testBean.name);
     $(".start").hide();
 });
+
+$(".homebutton").click(function(){
+    $(".start").show();
+    $(".play").hide();
+});

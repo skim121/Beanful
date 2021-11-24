@@ -28,6 +28,5 @@ setTimeout(() => {
 $("#playbutton").click(function(){
     testBean.name = $("#nameinput").val();
     $(".beanname").html(testBean.name);
-
-
+    $(".start").hide();
 });

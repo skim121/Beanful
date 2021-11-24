@@ -14,69 +14,73 @@
     <title>Beanful</title>
 </head>
 
-<body>
 
+<body>
+<!-- Start Page -->
 <section class="start">
     <h1 class="title">BEANFUL</h1>
     <h3 class="pick">Pick your bean!</h3>    
     <img id="testbean" src = "images/testbean.png" alt=""> 
     <br>
     <form> 
-        <input type="text" id="nameinput" placeholder = "Name your bean" />
-        <!-- <input type="submit" id="submitinput" value ="Play"/> -->
+        <input type="text" id="nameinput" placeholder = "Name your bean" autocomplete="off" />
         <input type=button id="playbutton" value="Play" />
     </form>
 </section>
 
+<!-- Play Page-->
 <section class = "play">
-
     <h1 class="beanname">BEAN NAME</h1>
-    
-
-
     <div class="character">
         <img src = "images/testbean.png" alt=""> 
     </div>  
+    <div class="instructions">
+        <p> <span>Instructions: </span><br>Play the game and have fun</p>
+    </div>
 
-
-    <div class="container">
-    
+    <div class="container">    
         <div class="water">
-            <button class="waterbutton">Water</button>
-           
-           <div class="watersub">
-            <h3 class="watertext">Keep your bean hydrated</h3>
-            <div class="waterbar"></div>
-            <div class="waterprogress" data-done="70">70%</div>
-
+            <button class="waterbutton">
+                <img class="waterbutton" src = "images/watercan.jpeg">
+            </button>
+            <div class="watersub">
+                <h3 class="watertext">Keep your bean hydrated</h3>
+                <div class="waterbar">
+                    <div class="waterprogress"></div>
+                </div>
+                
            </div>
-            
         </div>
     
         <div class="bug">
-            <button class="bugbutton">Bug Spray</button>
-            <h3 class="bugtext">Keep bugs away from your bean</h3>
-                <div class="bugbar"></div>
-                <div class="bugprogress" data-done="70">70%</div>
-        </div>
-        
-        <div class="lovebutton">
-            <button class="lovebutton">Sweet Talk</button>
+            <button class="bugbutton">
+                <img class="bugbutton" src = "images/watercan.jpeg">
+            </button>
+            <div class="bugsub">
+                <h3 class="bugtext">Keep bugs away from your bean</h3>
+                <div class="bugbar">
+                    <div class="bugprogress"></div>
+                </div>
+            </div>
         </div>
         
         <div class="love">
-            <h3 class="lovetext">Keep your bean feel loved</h3>
-                <div class="lovebar"></div>
-                <div class="loveprogress" data-done="70">70%</div>
+            <button class="lovebutton">
+                <img class="lovebutton" src = "images/watercan.jpeg">
+            </button>
+            <div class="lovesub">
+                <h3 class="lovetext">Make your bean feel loved</h3>
+                <div class="lovebar">
+                    <div class="loveprogress"></div>
+                </div>
+            </div>
         </div>
-
     </div>
 
-    <div class="harvest"></div>
-
-
-
-
+    <div class="harvest">
+        <div class="harvestbar"></div>
+    </div>
 </section>
+
 </body>
 </html>

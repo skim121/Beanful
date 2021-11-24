@@ -1,16 +1,15 @@
 // Project One 
 
+// Click Play 
 
 
 
 
 
+   
 
 
-
-
-
-const testBean = {
+let testBean = {
     name: "Bean",
     age: 0,
     water: 0,
@@ -23,3 +22,12 @@ setTimeout(() => {
     progress.style.width = progress.getAttribute("data-done")+ "%";
     progress.style.opacity = 1; 
 })
+
+
+
+$("#playbutton").click(function(){
+    testBean.name = $("#nameinput").val();
+    $(".beanname").html(testBean.name);
+
+
+});

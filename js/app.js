@@ -44,6 +44,7 @@ function harvestUp(){
             let harvestWidth = ((60-harvestTimeRemaining)/60)*100;
             $harvestBar.css({width: `${harvestWidth}%`});
             console.log(harvestTimeRemaining);
+            $(".harvesttime").html(harvestTimeRemaining);
         } else {
             return;
         };

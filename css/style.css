@@ -101,6 +101,7 @@ span {
     border-radius: 5px;
     color: var(--copper);
     font-weight: bold;
+    cursor: pointer;
 }
 
 .character { 
@@ -127,15 +128,24 @@ span {
     grid-area: 5 / 1 / 6 / 6; 
 }
  
+.harvesttext {
+    width: 100%;
+    text-align: center;
+    font-weight: bold;
+    color: var(--dark);
+    font-size: 18px;
+    position: absolute;
+}
 
 .harvestbar {
+    display: flex;
     background: var(--main);
     border: 5px solid var(--dark);
     height: 30px;
     width: 80%;
+    border-radius: 20px;
     margin-left: 10%;
     margin-top: 3%;
-    border-radius: 20px;
 }
 
 .harvestprogress { 

@@ -61,27 +61,6 @@ input{
     cursor: pointer;
 }
 
-.waterbar{
-    background: rgb(238, 236, 236);
-    width: 100%;
-    height: 35px;
-    border-radius: 20px;
-}
-
-.bugbar{
-    background: rgb(238, 236, 236);
-    width: 100%;
-    height: 35px;
-    border-radius: 20px;
-}
-
-.lovebar{
-    background: rgb(238, 236, 236);
-    width: 100%;
-    height: 35px;
-    border-radius: 20px;
-}
-
 .play {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
@@ -127,6 +106,7 @@ span {
 .character { 
     text-align: center;
     grid-area: 2 / 1 / 5 / 3; 
+    padding-top: 5%;
 }
 
 .container {
@@ -135,7 +115,6 @@ span {
     padding-top: 5%;
     padding-right: 15%;
     padding-left: 5%;
-
 }
 
 .container h3{
@@ -144,10 +123,29 @@ span {
 }
 
 .harvest { 
-    background-color: lightblue;
+    /* background-color: lightblue; */
     grid-area: 5 / 1 / 6 / 6; 
 }
-  
+ 
+
+.harvestbar {
+    background: var(--main);
+    border: 5px solid var(--dark);
+    height: 30px;
+    width: 80%;
+    margin-left: 10%;
+    margin-top: 3%;
+    border-radius: 20px;
+}
+
+.harvestprogress { 
+    display:flex;
+    height: 100%;
+    width: 0%; 
+    background-color: var(--dark);
+    border-radius: 20px 0 0 20px;
+}
+
 .water, .bug, .love{
     display: flex;
     padding-bottom: 3%;
@@ -175,11 +173,16 @@ span {
     background-color: white;
 }
 
+.waterbar, .bugbar, .lovebar{
+    background: rgb(238, 236, 236);
+    width: 100%;
+    height: 35px;
+    border-radius: 20px;
+}
 
 
 .waterprogress, .bugprogress, .loveprogress{
     height: 100%;
-    
     background-color: var(--dark);
     display: flex;
     border-radius: 20px;

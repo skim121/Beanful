@@ -12,14 +12,14 @@ class Bean {
 }
 
 const testBean = new Bean("",80,80,80);
-
+let harvestTimeRemaining = 60; 
 
 // Variables (including Jquery)
 
 const $waterBar = $(".waterprogress");
 const $bugBar = $(".bugprogress");
 const $loveBar = $(".loveprogress"); 
-const $waterButton = $(".waterbutton");
+const $harvestBar = $(".harvestprogress"); 
 
 
 function barReduce(){
@@ -37,7 +37,18 @@ function barReduce(){
     },400);        
 }
 
-
+function harvestUp(){
+    setInterval(function(){
+        if(harvestTimeRemaining>0){
+            harvestTimeRemaining -= 1; 
+            let harvestWidth = ((60-harvestTimeRemaining)/60)*100;
+            $harvestBar.css({width: `${harvestWidth}%`});
+            console.log(harvestTimeRemaining);
+        } else {
+            return;
+        };
+    },500);
+}
 
 $(".waterbutton").click(function(){
     if(testBean.water<90){
@@ -70,16 +81,28 @@ $(".lovebutton").click(function(){
 });
 
 
+
+
+
+
+
+
+
 $("#playbutton").click(function(){
     testBean.name = $("#nameinput").val();
-    $(".beanname").html(testBean.name);
+    if (testBean.name.length == 0){
+        $(".beanname").html("Bean");
+    } else {
+        $(".beanname").html(testBean.name);
+    }; 
     $(".start").hide();
     $(".play").show();   
     barReduce();
+    harvestUp();
 });
 
 $(".homebutton").click(function(){
-    $(".start").show();
     $(".play").hide();
+    $(".start").show();
     location.reload();
 });

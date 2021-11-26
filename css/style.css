@@ -17,7 +17,7 @@ body{
     text-align: center;
     background-size: cover;
     height: 100%;
-    padding: 6%;
+    /* padding: 6%; */
 }
 
 h1{
@@ -82,7 +82,7 @@ input{
     grid-area: 1 / 3 / 2 / 7; 
     color: var(--extradark);
     margin-top: 3%;
-    padding-left: 40%;
+    margin-left: 20%;
     font-size: 16px;
     display: flex; 
 }
@@ -92,10 +92,10 @@ span {
 }
 
 .homebutton{
-    width: 15%;
+    width: 10%;
     height: 30%;
     border: none;
-    margin-left: 20%;
+    margin-left: 3%;
     margin-top: 3%;
     background-color: var(--white);
     border-radius: 5px;
@@ -168,7 +168,12 @@ span {
     justify-content: center;
     }
 
-.waterbutton,.bugbutton, .lovebutton  {
+.waterbutton, .bugbutton, .lovebutton {
+    border: none;
+    background: transparent;
+}
+
+.waterbutton img,.bugbutton img, .lovebutton img {
     height: auto; 
     width: auto; 
     max-width: 100px; 
@@ -177,10 +182,12 @@ span {
     border: none;
     background-color: transparent;
     padding-top: 10px;
+    border-radius: 25%;
 }
 
-.waterbutton:hover, .bugbutton:hover, .lovebutton:hover{
-    background-color: white;
+.waterbutton img:hover, .bugbutton img:hover, .lovebutton img:hover{
+    border-radius: 25%; 
+    background-color: var(--dark);
 }
 
 .waterbar, .bugbar, .lovebar{

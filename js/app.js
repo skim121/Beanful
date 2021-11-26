@@ -1,5 +1,7 @@
 // Project One 
 
+$(".play").hide();
+
 // Character Building
 class Bean {
     constructor(name, water, bug, love){
@@ -12,16 +14,15 @@ class Bean {
 }
 
 const testBean = new Bean("",80,80,80);
-let harvestTimeRemaining = 60; 
 
 // Variables (including Jquery)
-
+let harvestTimeRemaining = 60; 
 const $waterBar = $(".waterprogress");
 const $bugBar = $(".bugprogress");
 const $loveBar = $(".loveprogress"); 
 const $harvestBar = $(".harvestprogress"); 
 
-
+// Static Bar Reducing at Set Interval
 function barReduce(){
     setInterval(function(){
         testBean.water -= 3;
@@ -37,6 +38,7 @@ function barReduce(){
     },400);        
 }
 
+// Harvest Bar Increasing at Set Interval
 function harvestUp(){
     setInterval(function(){
         if(harvestTimeRemaining>0){
@@ -51,6 +53,8 @@ function harvestUp(){
     },500);
 }
 
+
+// Buttons 
 $(".waterbutton").click(function(){
     if(testBean.water<90){
         testBean.water += 10;
@@ -80,13 +84,6 @@ $(".lovebutton").click(function(){
         $loveBar.css({width:`${testBean.love}%`});
     };
 });
-
-
-
-
-
-
-
 
 
 $("#playbutton").click(function(){

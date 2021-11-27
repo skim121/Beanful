@@ -2,25 +2,45 @@
 
 $(".play").hide();
 
-// Character Building
-class Bean {
-    constructor(name, water, bug, love){
-        this.name = name; 
-        this.water = water; 
-        this.bug = bug;
-        this.love = love; 
-    } 
-
-}
-
-const testBean = new Bean("",80,80,80);
-
 // Variables (including Jquery)
 let harvestTimeRemaining = 60; 
 const $waterBar = $(".waterprogress");
 const $bugBar = $(".bugprogress");
 const $loveBar = $(".loveprogress"); 
 const $harvestBar = $(".harvestprogress"); 
+const $charPic = $("#beanchar");
+
+// Character Building
+class Bean {
+    constructor(name, water, bug, love, age){
+        this.name = name; 
+        this.water = water; 
+        this.bug = bug;
+        this.love = love; 
+        this.age = age;
+    } 
+
+    beanEvolve(){
+        let that = this;
+        setInterval(function(){
+            console.log(that.age);
+            that.age += 1; 
+            if(that.age>20){
+                $charPic.attr("src","images/testbean2.png");
+            };
+            if(that.age>40){
+                $charPic.attr("src","images/testbean3.png");
+            }
+        },500); 
+    };
+
+}
+
+let testBean = new Bean("B",80,80,80,1);
+
+
+
+
 
 // Static Bar Reducing at Set Interval
 function barReduce(){
@@ -45,7 +65,7 @@ function harvestUp(){
             harvestTimeRemaining -= 1; 
             let harvestWidth = ((60-harvestTimeRemaining)/60)*100;
             $harvestBar.css({width: `${harvestWidth}%`});
-            console.log(harvestTimeRemaining);
+            // console.log(harvestTimeRemaining);
             $(".harvesttime").html(harvestTimeRemaining);
         } else {
             return;
@@ -53,6 +73,17 @@ function harvestUp(){
     },500);
 }
 
+function beanEvolve(){
+    if (harvestTimeRemaining <=40){
+        $charPic.attr("src","images/testbean2.png");
+    } else if (harvestTimeRemaining <=20){
+        $charPic.attr("src","images/testbean3.png");
+    }
+}
+
+
+        
+    
 
 // Buttons 
 $(".waterbutton").click(function(){
@@ -97,6 +128,7 @@ $("#playbutton").click(function(){
     $(".play").show();   
     barReduce();
     harvestUp();
+    testBean.beanEvolve(); 
 });
 
 $(".homebutton").click(function(){

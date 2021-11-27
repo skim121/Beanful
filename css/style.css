@@ -179,7 +179,7 @@ span {
     max-width: 100px; 
     max-height: 100px;
     cursor: pointer;
-    border: none;
+    border: 5px dashed var(--dark);
     background-color: transparent;
     padding-top: 10px;
     border-radius: 25%;

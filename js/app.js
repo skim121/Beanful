@@ -1,6 +1,8 @@
 // Project One 
 
 $(".play").hide();
+$(".win").hide();
+$(".lose").hide();
 
 // Variables (including Jquery)
 let harvestTimeRemaining = 60; 
@@ -47,15 +49,39 @@ function barReduce(){
     setInterval(function(){
         testBean.water -= 3;
         $waterBar.css({width:`${testBean.water}%`});
+        if(testBean.water <=0){
+            $(".start").hide();
+            $(".play").hide();
+            $(".win").hide();
+            $(".lose").show();
+            return;
+        };
     },200);    
     setInterval(function(){
         testBean.bug -= 10;
         $bugBar.css({width:`${testBean.bug}%`});
+        if(testBean.bug <=0){
+            $(".start").hide();
+            $(".play").hide();
+            $(".win").hide();
+            $(".lose").show();
+            return;
+        };
     },700);    
     setInterval(function(){
         testBean.love -= 5;
         $loveBar.css({width:`${testBean.love}%`});
-    },400);        
+        if(testBean.love <=0){
+            $(".start").hide();
+            $(".play").hide();
+            $(".win").hide();
+            $(".lose").show();
+            return;
+        };  
+    },400);      
+    
+    
+ 
 }
 
 // Harvest Bar Increasing at Set Interval
@@ -68,22 +94,15 @@ function harvestUp(){
             // console.log(harvestTimeRemaining);
             $(".harvesttime").html(harvestTimeRemaining);
         } else {
+            $(".start").hide();
+            $(".play").hide();
+            $(".win").show();
+            $(".lose").hide();
             return;
         };
     },500);
 }
-
-function beanEvolve(){
-    if (harvestTimeRemaining <=40){
-        $charPic.attr("src","images/testbean2.png");
-    } else if (harvestTimeRemaining <=20){
-        $charPic.attr("src","images/testbean3.png");
-    }
-}
-
-
-        
-    
+   
 
 // Buttons 
 $(".waterbutton").click(function(){
@@ -136,3 +155,6 @@ $(".homebutton").click(function(){
     $(".start").show();
     location.reload();
 });
+
+
+

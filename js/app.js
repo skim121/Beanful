@@ -219,16 +219,6 @@ $("#playbutton").click(function(){
 
 
 
-
-
-
-
-
-
-
-
-
-
 // Home button to take to start page
 $(".homebutton").click(function(){
     $(".play").hide();

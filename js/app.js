@@ -15,6 +15,7 @@ const $loveBar = $(".loveprogress");
 const $harvestBar = $(".harvestprogress"); 
 const $charPic = $("#beanchar");
 
+
 // Harvest Bar Increasing at Set Interval (Assigning interval ID allows for the timer to stop once the game stops)
 let intervalId; 
 let harvestTimeRemaining = 60; 
@@ -38,6 +39,17 @@ class Bean {
         this.love = love; 
         this.age = age;
     } 
+
+    // Display the name input by the user on the start page
+    nameAssign(){
+        this.name = $("#nameinput").val();
+        if (this.name.length == 0){
+            $(".beanname").html("BEANFUL");
+        } else {
+            $(".beanname").html(this.name);
+        }; 
+        };
+
     // Change bean pictures at age = 20 and age = 40 (Game win at age = 60 when harvest is over)
     beanEvolve(){
         let that = this;
@@ -136,7 +148,7 @@ class Bean {
 
 }
 
-let testBean = new Bean("B",100,100,100,1);
+let testBean = new Bean("",100,100,100,0);
 
 
 //Buttons to increase metrics by set amount (also maxing at 100) 
@@ -171,20 +183,50 @@ $(".lovebutton").click(function(){
 });
 
 
+
+// Buttons
+let character = "";
+$(".beanbutton1").click(function(){
+    $(".yellowbean").attr("src","images/borderbean.png");
+    $(".coffeebean").attr("src","images/coffeebean.png");
+    character = "testbean";
+    console.log(character);
+});
+
+$(".beanbutton2").click(function(){
+    $(".coffeebean").attr("src","images/bordercoffee.png");
+    $(".yellowbean").attr("src","images/beanfront.png");
+    character = "coffebean"; 
+    console.log(character);
+});
+
+
+
+
+
 // Game start button 
 $("#playbutton").click(function(){
-    testBean.name = $("#nameinput").val();
-    if (testBean.name.length == 0){
-        $(".beanname").html("Bean");
-    } else {
-        $(".beanname").html(testBean.name);
-    }; 
+    
     $(".start").hide();
-    $(".play").show();   
+    $(".play").show(); 
     harvestUp();
+    testBean.nameAssign();  
     testBean.beanEvolve(); 
     testBean.barReduce();
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 // Home button to take to start page

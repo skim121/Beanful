@@ -33,6 +33,21 @@ h3{
     color: var(--white);
 }
 
+.pickbeans{
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.beanbutton1, .beanbutton2{
+    border:none;
+    background: transparent;
+    text-align: center;
+    cursor: pointer;
+}
+
+
 input{
     position: relative;
     display: inline-block;
@@ -44,7 +59,6 @@ input{
 #nameinput{
     padding: 12px;
     width: 250px;
-    margin: 20px; 
     border: none;
     border-radius: 20px 0 0 20px;
     outline: none;

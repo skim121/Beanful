@@ -1,5 +1,9 @@
 // Project One 
+// Dec 1, 2021 
+// Author: Sarah Kim 
 
+
+// Start with other windows hidden 
 $(".play").hide();
 $(".win").hide();
 $(".lose").hide();
@@ -11,7 +15,6 @@ const $loveBar = $(".loveprogress");
 const $harvestBar = $(".harvestprogress"); 
 const $charPic = $("#beanchar");
 
-
 // Harvest Bar Increasing at Set Interval (Assigning interval ID allows for the timer to stop once the game stops)
 let intervalId; 
 let harvestTimeRemaining = 60; 
@@ -22,12 +25,10 @@ function harvestUp(){
                 let harvestWidth = ((60-harvestTimeRemaining)/60)*100;
                 $harvestBar.css({width: `${harvestWidth}%`});
                 $(".harvesttime").html(harvestTimeRemaining);
-                console.log(harvestTimeRemaining);
             };
         },500);
 }
    
-
 // Character Building
 class Bean {
     constructor(name, water, bug, love, age){
@@ -37,7 +38,7 @@ class Bean {
         this.love = love; 
         this.age = age;
     } 
-
+    // Change bean pictures at age = 20 and age = 40 (Game win at age = 60 when harvest is over)
     beanEvolve(){
         let that = this;
         setInterval(function(){
@@ -51,6 +52,7 @@ class Bean {
         },500); 
     };
 
+    // Automatic decrease of water, bug, love bars and conditional win and lose stated
     barReduce(){
         let that = this;
         let intervalIdWater;
@@ -59,7 +61,6 @@ class Bean {
 
         intervalIdWater = setInterval(function(){
             that.water -= 10;
-            console.log(that.water);
             $waterBar.css({width:`${that.water}%`});
             if(that.water <=0){
                 $(".start").hide();
@@ -69,7 +70,7 @@ class Bean {
                 pauseTimer();
                 return;
             };
-            if(harvestTimeRemaining==0){
+            if(harvestTimeRemaining===0){
                 $(".start").hide();
                 $(".play").hide();
                 $(".win").show();
@@ -78,6 +79,7 @@ class Bean {
                 return;
             };
         },500);    
+
         intervalIdBug = setInterval(function(){
             that.bug -= 10;
             $bugBar.css({width:`${that.bug}%`});
@@ -89,7 +91,7 @@ class Bean {
                 pauseTimer();
                 return;
             };
-            if(harvestTimeRemaining==0){
+            if(harvestTimeRemaining===0){
                 $(".start").hide();
                 $(".play").hide();
                 $(".win").show();
@@ -98,6 +100,7 @@ class Bean {
                 return;
             };
         },1000);    
+
         intervalIdLove= setInterval(function(){
             that.love -= 10;
             $loveBar.css({width:`${that.love}%`});
@@ -109,7 +112,7 @@ class Bean {
                 pauseTimer();
                 return;
             };
-            if(harvestTimeRemaining==0){
+            if(harvestTimeRemaining===0){
                 $(".start").hide();
                 $(".play").hide();
                 $(".win").show();
@@ -128,54 +131,10 @@ class Bean {
     }
 }
 
-
-
 let testBean = new Bean("B",100,100,100,1);
 
 
-
-
-
-// Static Bar Reducing at Set Interval
-// function barReduce(){
-//     setInterval(function(){
-//         testBean.water -= 3;
-//         $waterBar.css({width:`${testBean.water}%`});
-//         if(testBean.water <=0){
-//             $(".start").hide();
-//             $(".play").hide();
-//             $(".win").hide();
-//             $(".lose").show();
-//             return;
-//         };
-//     },200);    
-//     setInterval(function(){
-//         testBean.bug -= 10;
-//         $bugBar.css({width:`${testBean.bug}%`});
-//         if(testBean.bug <=0){
-//             $(".start").hide();
-//             $(".play").hide();
-//             $(".win").hide();
-//             $(".lose").show();
-//             return;
-//         };
-//     },700);    
-//     setInterval(function(){
-//         testBean.love -= 5;
-//         $loveBar.css({width:`${testBean.love}%`});
-//         if(testBean.love <=0){
-//             $(".start").hide();
-//             $(".play").hide();
-//             $(".win").hide();
-//             $(".lose").show();
-//             return;
-//         };  
-//     },400);      
-// }
-
-
-
-// Buttons 
+// Buttons to increase metrics by set amount (also maxing at 100) 
 $(".waterbutton").click(function(){
     if(testBean.water<90){
         testBean.water += 10;
@@ -207,6 +166,7 @@ $(".lovebutton").click(function(){
 });
 
 
+// Game start button 
 $("#playbutton").click(function(){
     testBean.name = $("#nameinput").val();
     if (testBean.name.length == 0){
@@ -221,12 +181,26 @@ $("#playbutton").click(function(){
     testBean.barReduce();
 });
 
+
+// Home button to take to start page
 $(".homebutton").click(function(){
     $(".play").hide();
+    $(".start").show();
+    $(".lose").hide();
+    $(".win").hide();
+    location.reload();
+});
+
+// Play again button to take to start page
+$(".playagain").click(function(){
+    $(".play").hide();
+    $(".lose").hide();
+    $(".win").hide();
     $(".start").show();
     location.reload();
 });
 
+// Try again button to take to start page
 $(".tryagain").click(function(){
     $(".play").hide();
     $(".lose").hide();

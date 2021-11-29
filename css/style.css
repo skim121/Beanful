@@ -210,6 +210,41 @@ span {
     align-items: center;
 }
 
+.win{
+    text-align: center;
+}
+
+.playagain{
+    color: var(--copper);
+    margin-top: 20%;
+    padding-left: 3%;
+    padding-right: 3%;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    font-size: 30px;
+    font-weight: bold;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+
+}
+
+.playagain:hover{
+    color: var(--button);
+    background: var(--copper);
+    margin-top: 20%;
+    padding-left: 3%;
+    padding-right: 3%;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    font-size: 30px;
+    font-weight: bold;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+
 .lose{
     text-align: center;
 }

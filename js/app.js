@@ -29,7 +29,7 @@ function harvestUp(){
         },500);
 }
    
-// Character Building
+// Character Building Class
 class Bean {
     constructor(name, water, bug, love, age){
         this.name = name; 
@@ -43,12 +43,16 @@ class Bean {
         let that = this;
         setInterval(function(){
             that.age += 1; 
-            if(that.age>20){
-                $charPic.attr("src","images/testbean2.png");
+            if(that.age===20){
+                $charPic.fadeOut(400, function(){
+                    $(this).attr("src","images/testbean2.png").fadeIn(400);
+                });
             };
-            if(that.age>40){
-                $charPic.attr("src","images/testbean3.png");
-            }
+            if(that.age===40){
+                $charPic.fadeOut(400, function(){
+                    $(this).attr("src","images/testbean3.png").fadeIn(400);
+                });
+            };
         },500); 
     };
 
@@ -58,7 +62,7 @@ class Bean {
         let intervalIdWater;
         let intervalIdBug;
         let intervalIdLove;
-
+        // Water bar
         intervalIdWater = setInterval(function(){
             that.water -= 10;
             $waterBar.css({width:`${that.water}%`});
@@ -79,7 +83,7 @@ class Bean {
                 return;
             };
         },500);    
-
+        // Bug bar
         intervalIdBug = setInterval(function(){
             that.bug -= 10;
             $bugBar.css({width:`${that.bug}%`});
@@ -100,7 +104,7 @@ class Bean {
                 return;
             };
         },1000);    
-
+        // Love bar
         intervalIdLove= setInterval(function(){
             that.love -= 10;
             $loveBar.css({width:`${that.love}%`});
@@ -121,20 +125,21 @@ class Bean {
                 return;
             };
         },700);    
-        
+        // Pause all timers 
         let pauseTimer = function(){
             clearInterval(intervalId);
             clearInterval(intervalIdWater);
             clearInterval(intervalIdBug);
             clearInterval(intervalIdLove);
         };
-    }
+    };
+
 }
 
 let testBean = new Bean("B",100,100,100,1);
 
 
-// Buttons to increase metrics by set amount (also maxing at 100) 
+//Buttons to increase metrics by set amount (also maxing at 100) 
 $(".waterbutton").click(function(){
     if(testBean.water<90){
         testBean.water += 10;

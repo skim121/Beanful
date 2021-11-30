@@ -35,4 +35,4 @@ On the lose screen:
 
 
 
-Click here to play: [Link](https://skim121.github.io-beanful)
+Click here to play: [Link](https://skim121.github.io/Beanful/)

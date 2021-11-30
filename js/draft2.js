@@ -152,6 +152,40 @@ class Bean {
 let testBean = new Bean("",100,100,100,0);
 let coffeeBean = new Bean("",100,100,100,0);
 
+
+// // Buttons to increase metrics by set amount (also maxing at 100) 
+//     $(".waterbutton").click(function(){
+//         if(testBean.water<90){
+//             testBean.water += 10;
+//             $waterBar.css({width:`${testBean.water}%`});
+//         } else{
+//             testBean.water = 100;
+//             $waterBar.css({width:`${testBean.water}%`});
+//         };
+//     });
+
+//     $(".bugbutton").click(function(){
+//         if(testBean.bug<93){
+//             testBean.bug += 7;
+//             $bugBar.css({width:`${testBean.bug}%`});
+//         } else{
+//             testBean.bug = 100;
+//             $bugBar.css({width:`${testBean.bug}%`});
+//         };
+//     });
+
+//     $(".lovebutton").click(function(){
+//         if(testBean.love<85){
+//             testBean.love += 15;
+//             $loveBar.css({width:`${testBean.love}%`});
+//         } else{
+//             testBean.love = 100;
+//             $loveBar.css({width:`${testBean.love}%`});
+//         };
+//     });
+
+
+
 // Buttons
 let character = "";
 $(".beanbutton1").click(function(){
@@ -167,12 +201,15 @@ $(".beanbutton2").click(function(){
 });
 
 
-// Character Conditional 
+
+
+
+// Game start button 
 
 function chooseChar(){
-
-    switch(character){
-        case "testbean" :
+    
+    
+    if(character="testbean"){
             console.log(character);
             $charPic.attr("src","images/testbean1.png");
             $(".start").hide();
@@ -182,41 +219,38 @@ function chooseChar(){
             testBean.beanEvolve("images/testbean2.png","images/testbean3.png"); 
             testBean.barReduce();
 
-        // Buttons to increase metrics by set amount (also maxing at 100) 
-        $(".waterbutton").click(function(){
-            if(testBean.water<90){
-                testBean.water += 10;
-                $waterBar.css({width:`${testBean.water}%`});
-            } else{
-                testBean.water = 100;
-                $waterBar.css({width:`${testBean.water}%`});
-            };
-        });
+            // Buttons to increase metrics by set amount (also maxing at 100) 
+            $(".waterbutton").click(function(){
+                if(testBean.water<90){
+                    testBean.water += 10;
+                    $waterBar.css({width:`${testBean.water}%`});
+                } else{
+                    testBean.water = 100;
+                    $waterBar.css({width:`${testBean.water}%`});
+                };
+            });
 
-        $(".bugbutton").click(function(){
-            if(testBean.bug<93){
-                testBean.bug += 7;
-                $bugBar.css({width:`${testBean.bug}%`});
-            } else{
-                testBean.bug = 100;
-                $bugBar.css({width:`${testBean.bug}%`});
-            };
-        });
+            $(".bugbutton").click(function(){
+                if(testBean.bug<93){
+                    testBean.bug += 7;
+                    $bugBar.css({width:`${testBean.bug}%`});
+                } else{
+                    testBean.bug = 100;
+                    $bugBar.css({width:`${testBean.bug}%`});
+                };
+            });
 
-        $(".lovebutton").click(function(){
-            if(testBean.love<85){
-                testBean.love += 15;
-                $loveBar.css({width:`${testBean.love}%`});
-            } else{
-                testBean.love = 100;
-                $loveBar.css({width:`${testBean.love}%`});
-            };
-        });
-
-            break;
-
-        case "coffeebean" :
-            console.log(character);
+            $(".lovebutton").click(function(){
+                if(testBean.love<85){
+                    testBean.love += 15;
+                    $loveBar.css({width:`${testBean.love}%`});
+                } else{
+                    testBean.love = 100;
+                    $loveBar.css({width:`${testBean.love}%`});
+                };
+            });
+        } 
+    if(character="coffeebean"){
             $charPic.attr("src","images/coffeebean1.png");
             $(".start").hide();
             $(".play").show(); 
@@ -256,20 +290,31 @@ function chooseChar(){
                     $loveBar.css({width:`${coffeeBean.love}%`});
                 };
             });
+        };
 
-            break; 
-        
-        default:
-            console.log(`Sorry`); 
     };
-};
 
-
-// Game start button 
-
+    
+    
 $("#playbutton").click(function(){
     chooseChar();
 });
+
+
+
+
+// $("#playbutton").click(function(){
+//     $(".start").hide();
+//     $(".play").show(); 
+//     harvestUp();
+//     testBean.nameAssign();  
+//     // testBean.beanEvolve("images/testbean2.png","images/testbean3.png"); 
+//     testBean.beanEvolve("images/coffeebean2.png","images/coffeebean3.png"); 
+//     testBean.barReduce();
+// });
+
+
+
 
 
 // Home button to take to start page

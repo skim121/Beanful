@@ -1,4 +1,4 @@
-# Cool Beans
+# Beanful
 GA SEI Unit One Project: Create a game similar to "Tamagotchi" using HTML, CSS, JS, and Jquery
 
 #### Objective 
@@ -32,3 +32,7 @@ On the win screen:
 On the lose screen: 
 
 - As a user, I want to click “Try again” to go back to the start screen. 
+
+
+
+Click here to play: [Link](https://skim121.github.io-beanful)

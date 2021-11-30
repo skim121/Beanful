@@ -147,9 +147,6 @@ class Bean {
     };
 };
 
-// Defining the beans
-let testBean = new Bean("",100,100,100,0);
-let coffeeBean = new Bean("",100,100,100,0);
 
 // Start page - highlighting the chosen bean when clicked
 let character = "";
@@ -170,6 +167,7 @@ $(".beanbutton2").click(function(){
 function chooseChar(){
     switch(character){
         case "testbean" :
+            let testBean = new Bean("",100,100,100,0);
             console.log(character);
             $charPic.attr("src","images/testbean1.png");
             $(".start").hide();
@@ -213,6 +211,7 @@ function chooseChar(){
             break;
 
         case "coffeebean" :
+            let coffeeBean = new Bean("",100,100,100,0);
             console.log(character);
             $charPic.attr("src","images/coffeebean1.png");
             $(".start").hide();
@@ -256,8 +255,8 @@ function chooseChar(){
 
             break; 
         
+        // If no bean is chosen then shake the text "pick a bean"
         default:
-            console.log(`Sorry`); 
             $(".pick").effect("shake",{direction:"left",times:3},300);
     };
 };

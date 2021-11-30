@@ -8,7 +8,7 @@ $(".play").hide();
 $(".win").hide();
 $(".lose").hide();
 
-// Variables (including Jquery)
+// Variables Shortcut
 const $waterBar = $(".waterprogress");
 const $bugBar = $(".bugprogress");
 const $loveBar = $(".loveprogress"); 
@@ -16,7 +16,7 @@ const $harvestBar = $(".harvestprogress");
 const $charPic = $("#beanchar");
 
 
-// Harvest Bar Increasing at Set Interval (Assigning interval ID allows for the timer to stop once the game stops)
+// Harvest bar increasing at set interval (Assigning interval ID allows for the timer to stop once the game stops)
 let intervalId; 
 let harvestTimeRemaining = 60; 
 function harvestUp(){
@@ -30,7 +30,7 @@ function harvestUp(){
         },500);
 }
    
-// Character Building Class
+// Character building class for multiple beans 
 class Bean {
     constructor(name, water, bug, love, age){
         this.name = name; 
@@ -94,7 +94,7 @@ class Bean {
                 pauseTimer();
                 return;
             };
-        },500);    
+        },700);    
         // Bug bar
         intervalIdBug = setInterval(function(){
             that.bug -= 10;
@@ -115,7 +115,7 @@ class Bean {
                 pauseTimer();
                 return;
             };
-        },1000);    
+        },1200);    
         // Love bar
         intervalIdLove= setInterval(function(){
             that.love -= 10;
@@ -136,8 +136,8 @@ class Bean {
                 pauseTimer();
                 return;
             };
-        },700);    
-        // Pause all timers 
+        },900);    
+        // Function to pause all timers (inside the barReduce function)
         let pauseTimer = function(){
             clearInterval(intervalId);
             clearInterval(intervalIdWater);
@@ -145,14 +145,13 @@ class Bean {
             clearInterval(intervalIdLove);
         };
     };
+};
 
-}
-
-
+// Defining the beans
 let testBean = new Bean("",100,100,100,0);
 let coffeeBean = new Bean("",100,100,100,0);
 
-// Buttons
+// Start page - highlighting the chosen bean when clicked
 let character = "";
 $(".beanbutton1").click(function(){
     $(".yellowbean").attr("src","images/borderbean.png");
@@ -168,9 +167,7 @@ $(".beanbutton2").click(function(){
 
 
 // Character Conditional 
-
 function chooseChar(){
-
     switch(character){
         case "testbean" :
             console.log(character);
@@ -182,7 +179,7 @@ function chooseChar(){
             testBean.beanEvolve("images/testbean2.png","images/testbean3.png"); 
             testBean.barReduce();
 
-        // Buttons to increase metrics by set amount (also maxing at 100) 
+        // Testbean buttons to increase metrics by set amount (also maxing at 100) 
         $(".waterbutton").click(function(){
             if(testBean.water<90){
                 testBean.water += 10;
@@ -226,7 +223,7 @@ function chooseChar(){
             coffeeBean.barReduce();
             $("#beanpost").attr("src","images/coffeepost.png");
 
-            //Buttons to increase metrics by set amount (also maxing at 100) 
+            //Coffeebean buttons to increase metrics by set amount (also maxing at 100) 
             $(".waterbutton").click(function(){
                 if(coffeeBean.water<90){
                     coffeeBean.water += 10;
@@ -261,12 +258,12 @@ function chooseChar(){
         
         default:
             console.log(`Sorry`); 
+            $(".pick").effect("shake",{direction:"left",times:3},300);
     };
 };
 
 
 // Game start button 
-
 $("#playbutton").click(function(){
     chooseChar();
 });

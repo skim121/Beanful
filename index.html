@@ -8,7 +8,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-    
+    <script
+    src="https://code.jquery.com/ui/1.13.0/jquery-ui.min.js"
+    integrity="sha256-hlKLmzaRlE8SCJC1Kw8zoUbU8BxA+8kR3gseuKfMjxA="
+    crossorigin="anonymous"></script>
     <link rel = "stylesheet" href = "css/style.css">
     <script defer src = "js/app.js"></script>
     <title>Beanful</title>
@@ -19,7 +22,7 @@
 <!-- Start Page -->
 <section class="start">
     <h1 class="title">BEANFUL</h1>
-    <h3 class="pick">Pick your bean!</h3>   
+    <h3 class="pick">Pick your bean!</h3> 
     <div class="pickbeans">
         <button class="beanbutton1">
             <img class="yellowbean" src = "images/beanfront.png">
@@ -29,7 +32,7 @@
         </button>
     </div> 
     
-    <!-- <img id="testbean" src = "images/testbean.png" alt="">  -->
+    
     <br>
     <form> 
         <input type="text" id="nameinput" placeholder = "Name your bean" autocomplete="off" />
@@ -44,7 +47,7 @@
         <img id="beanchar" src = "images/testbean1.png" alt=""> 
     </div>  
     <div class="instructions">
-        <p class="instructionstext"> <span>Instructions:</span><br>Click on the water, bug spray, and sweet talk buttons to keep your bean happy and alive until ready for harvest. (Disclaimer: This may not work in real life.) </p>
+        <p class="instructionstext"> <span>Instructions:</span><br>Click on the water, bug spray, and sweet talk buttons to keep your bean happy and alive until ready for harvest. (Disclaimer: This will not work in real life.) </p>
         <button class="homebutton">Home</button>
     </div>
 
@@ -85,10 +88,6 @@
                 </div>
             </div>
         </div>
-        <!-- <div class="game">  
-            <button class="pause">Pause</button>
-            <button class="resume">Resume</button>
-        </div> -->
     </div>
 
     <div class="harvest">
@@ -109,7 +108,7 @@
 </section>
 
 <section class="lose">
-    <h1 class="youlose">Welp... try again next season</h1>
+    <h1 class="youlose">Oops... try again next season</h1>
     <div class="youlosediv">
         <img id="trash" src = "images/trashcan.png" alt=""> 
         <button class="tryagain">Try Again</button>

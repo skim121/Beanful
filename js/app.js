@@ -174,7 +174,6 @@ $(".beanbutton2").click(function(){
     character = "coffeebean"; 
 });
 
-
 // Character Conditional 
 function chooseChar(){
     switch(character){
@@ -271,12 +270,10 @@ function chooseChar(){
     };
 };
 
-
 // Game start button 
 $("#playbutton").click(function(){
     chooseChar();
 });
-
 
 // Home button to take to start page
 $(".homebutton").click(function(){

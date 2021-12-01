@@ -1,6 +1,7 @@
 /* CSS HEX */
 :root {
     --main: #d7e0da; 
+    --color: rgb(215,224,218); 
     --dark: #717f6f;
     --white: #f7fafa;
     --copper: #E1B180;
@@ -86,6 +87,18 @@ input{
     grid-row-gap: 0px;
 }
     
+.dimmer {
+    display: none; 
+    background: #000;
+    opacity: 0.4; 
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%; 
+    height: 100%; 
+}
+
+
 .play h1 {
     font-size: 60px;
     text-align: center;
@@ -197,6 +210,8 @@ span {
 .waterbutton, .bugbutton, .lovebutton {
     border: none;
     background: transparent;
+    position: relative;
+    z-index: 100;
 }
 
 .waterbutton img,.bugbutton img, .lovebutton img {

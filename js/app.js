@@ -78,6 +78,7 @@ class Bean {
         intervalIdWater = setInterval(function(){
             that.water -= 10;
             $waterBar.css({width:`${that.water}%`});
+            lightDim();
             if(that.water <=0){
                 $(".start").hide();
                 $(".play").hide();
@@ -99,6 +100,7 @@ class Bean {
         intervalIdBug = setInterval(function(){
             that.bug -= 10;
             $bugBar.css({width:`${that.bug}%`});
+            lightDim();
             if(that.bug <=0){
                 $(".start").hide();
                 $(".play").hide();
@@ -120,6 +122,7 @@ class Bean {
         intervalIdLove= setInterval(function(){
             that.love -= 10;
             $loveBar.css({width:`${that.love}%`});
+            lightDim();
             if(that.love <=0){
                 $(".start").hide();
                 $(".play").hide();
@@ -144,8 +147,17 @@ class Bean {
             clearInterval(intervalIdBug);
             clearInterval(intervalIdLove);
         };
+        // Light Dimming
+        let lightDim = function(){
+            if (that.water<30 || that.bug<30 || that.love<30){
+                $(".dimmer").css("display","inline");
+            } else {
+                $(".dimmer").css("display","none");
+            };
+        };
     };
 };
+
 
 
 // Start page - highlighting the chosen bean when clicked
@@ -260,6 +272,12 @@ function chooseChar(){
             $(".pick").effect("shake",{direction:"left",times:3},300);
     };
 };
+
+
+
+
+
+
 
 
 // Game start button 

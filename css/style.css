@@ -140,6 +140,7 @@ span {
     color: var(--copper);
     font-weight: bold;
     cursor: pointer;
+    z-index: 99;
 }
 
 .homebutton:hover{

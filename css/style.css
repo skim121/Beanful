@@ -20,7 +20,6 @@ body{
     text-align: center;
     background-size: cover;
     height: 100%;
-    /* padding: 6%; */
 }
 
 h1{
@@ -151,7 +150,6 @@ span {
 
 .container {
     grid-area: 2 / 3 / 5 / 6; 
-    /* background-color: white; */
     padding-top: 5%;
     padding-right: 15%;
     padding-left: 5%;
@@ -163,7 +161,6 @@ span {
 }
 
 .harvest { 
-    /* background-color: lightblue; */
     grid-area: 5 / 1 / 6 / 6; 
 }
  
@@ -201,7 +198,6 @@ span {
 }
 
 .watersub, .bugsub, .lovesub {
-    /* background-color: red; */
     width: 80%;
     padding-left: 6%;
     justify-content: center;
@@ -220,7 +216,6 @@ span {
     max-width: 100px; 
     max-height: 100px;
     cursor: pointer;
-    /* border: 3px dashed var(--dark); */
     background-color: var(--button);
     padding-top: 10px;
     border-radius: 50%;

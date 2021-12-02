@@ -270,7 +270,7 @@ function chooseChar(){
     };
 };
 
-// Game start button 
+// Game start play button 
 $("#playbutton").click(function(){
     chooseChar();
 });
